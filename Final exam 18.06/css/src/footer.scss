@@ -1,0 +1,114 @@
+@import "!variables.scss";
+
+.footer {
+  width: 100%;
+  height: 150px;
+  background: url(../img/footer/pasta-tomato-footer.jpg) 0 0 no-repeat;
+  background-size: cover;
+  font-family: $main-font;
+  &-wrapper {
+    position: relative;
+    background-color: rgba( 122, 122, 122, 0.5);
+    width: $wrapper-width;
+    color: black;
+    margin: 0 auto;
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__heading {
+    margin-bottom: 10px;
+    color: black;
+  }
+}
+
+.contacts__street:hover, .contacts__phone:hover, .contacts__email:hover {
+  color: black;
+}
+
+.footer__copy {
+  display: block;
+  width: 20%;
+}
+
+//socials
+.social-media {
+  font-style: $main-font;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  &__facebook {
+    background: url(../img/footer/facebook.svg);
+    &:hover {
+      background: url(../img/footer/facebook-hover.svg);
+    }
+  }
+  &__vkontakte {
+    background: url(../img/footer/vk.svg);
+    &:hover {
+      background: url(../img/footer/vk-hover.svg);
+    }
+  }
+  &__instagram {
+    background: url(../img/footer/instagram.svg);
+    background-color: #fff;
+    &:hover {
+      background: url(../img/footer/instagram-hover.svg);
+      background-color: #6A453B;
+
+    }
+  }
+  &__pinterest {
+    background: url(../img/footer/pinterest.svg);
+    &:hover {
+      background: url(../img/footer/pinterest-hover.svg);
+    }
+  }
+}
+
+//apps
+
+.app-link__apple {
+  background: url(../img/footer/apple.svg);
+}
+
+.app-link__android {
+  background: url(../img/footer/android.svg);
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .footer {
+      height: 250px;
+      &-wrapper {
+        width: 95%;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      &__contacts {
+        float: left;
+        margin: 10px 10px 0 0;
+      }
+      &__social-media {
+        float: left;
+        margin: 0 10px;
+        margin-top: 10px;
+      }
+      &__app-link {
+        float: left;
+        margin: 10px -10px 0;
+      }
+      &__copy {
+        width: 100%;
+        display: block;
+        clear: both;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+}
