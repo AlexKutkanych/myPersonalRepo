@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>PMI Business Quiz</title>
+</head>
+<body>
+    <h1 class="quiz-title">PMI Business Quiz</h1>
+    <div class="quiz-container">
+        <div id="quiz"></div>
+        <span id="choose-option" class="choose-option">*Please choose an option</span>
+    </div>
+    <button class="button" id="next"><span class="button-text">Next Question </span></button>
+    <button class="button" id="submit">Submit Quiz</button>
+    <span id="question-counter" class="question-counter"></span>
+     <section class="modal" id="modal">
+        <section class="results-modal">
+            <h1 class="high-score__msg">Congratulations!</h1>
+            <h1 class="low-score__msg">Try your best next time!</h1>
+            <span class="score-msg">Your score is <span id="score">10</span></span>
+            <span class="warning-msg">*Please, do not close this tab.</span>
+            <h3 class="score-msg">Your answers are:</h3>
+            <ul id="user-answers__list" class="user-answers__list"></ul>
+        </section>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
