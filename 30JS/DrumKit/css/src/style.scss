@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('../img/bg.jpg') center center fixed;
+  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.buttons-wrapper {
+  width: 60%;
+  height: 100px;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+
+  &-block {
+    width: 10%;
+    height: 100%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: yellow;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .4);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .7);
+      cursor: pointer;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: 40px;
+    color: #fff;
+  }
+
+  &__sound-name {
+
+  }
+
+  &_playing {
+      transform: scale(1.1);
+      border: 2px solid yellow;
+      box-shadow: 10px 10px 37px -12px yellow;
+  }
+}
