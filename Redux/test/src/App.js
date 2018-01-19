@@ -2,38 +2,47 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
+import { getCars } from './actions/cars';
+import Main from './Main';
+import PhotoGrid from './PhotoGrid';
+import Single from './Single';
+import {
+  Switch,
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
 
-class App extends Component {
-
-  addCar = () => {
-    const input = document.querySelector('.carInput');
-    this.props.onAddCar(input.value);
-    input.value = '';
-  }
-  render() {
-
-    return (
-      <div className="App">
-        <input type="text" name="" className="carInput" />
-        <button className="addCar"
-                onClick={this.addCar}
-          >Add Car</button>
-        <ul className="list">
-          {this.props.testStore.map((car, i) => <li key={i}>{car}</li>
-          )}
-        </ul>
-      </div>
-    );
-  }
+const App = () => {
+  return (<Router>
+        <div>
+          <Main />
+          <Switch>
+            <Route exact path='/' component={PhotoGrid} />
+            <Route exact path='/single' component={Single} />
+          </Switch>
+        </div>
+      </Router>)
 }
+
+
 
 export default connect(
   state => ({
-    testStore: state
+    cars: state.cars.filter(car => car.carName.includes(state.filterCars))
   }),
   dispatch => ({
     onAddCar: (carName) => {
-      dispatch({ type: 'ADD_CAR', payload: carName })
+      const payload = {
+        id: Date.now().toString(),
+        carName
+      };
+      dispatch({ type: 'ADD_CAR', payload })
+    },
+    onFindCar: (name) => {
+      dispatch({ type: 'FIND_CAR', payload: name })
+    },
+    onGetCars: () => {
+      dispatch(getCars());
     }
   })
 )(App);
