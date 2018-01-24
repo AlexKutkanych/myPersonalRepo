@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import PhotoGrid from './components/PhotoGrid/PhotoGrid';
+import Footer from './components/Footer/Footer';
 import UserWrapper from './components/UserWrapper/UserWrapper';
 import FilterWrapper from './components/FilterWrapper/FilterWrapper';
 import { getPhotos } from './actions/PageActions';
 import './App.css';
+import img from './components/gallery.svg';
 
 class App extends Component {
     constructor(props){
@@ -32,6 +34,7 @@ class App extends Component {
           setFilter={setFilter}
           filter={filter} />
         <PhotoGrid photos={page.photos} />
+        <Footer />
       </div>
     );
   }
