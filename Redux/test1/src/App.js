@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
-import PhotoGrid from './PhotoGrid/PhotoGrid';
-import User from './components/User/User';
-import Page from './components/Page/Page';
-import UserWrapper from './UserWrapper/UserWrapper';
-import YearSwitcher from './components/YearSwitcher/YearSwitcher';
+import PhotoGrid from './components/PhotoGrid/PhotoGrid';
+import UserWrapper from './components/UserWrapper/UserWrapper';
+import FilterWrapper from './components/FilterWrapper/FilterWrapper';
 import { getPhotos } from './actions/PageActions';
 import './App.css';
 
@@ -14,34 +11,27 @@ class App extends Component {
     constructor(props){
       super(props);
       this.state = {
-        test: 2015,
-        ph: []
+        test: 2015
       }
     }
 
     componentDidMount(){
-      this.props.getPhotos(2015, 'flower');
+      this.props.getPhotos('all');
     }
 
-
   render() {
-    const { user, page, setYear, getPhotos } = this.props;
-
+    const { page, filter, getPhotos, setFilter } = this.props;
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Photo album</h1>
           <UserWrapper />
         </header>
-        <YearSwitcher currentYear={page.year}
-                      switchYear={getPhotos}
-                      changeActiveYear={this.changeActiveYear}
-                      getPhotos={getPhotos}
-                     />
-                   <input id="test"/>
-        <User name={user.name} />
-        <Page photos={page.photos}/>
-        <PhotoGrid />
+        <FilterWrapper
+          getPhotos={getPhotos}
+          setFilter={setFilter}
+          filter={filter} />
+        <PhotoGrid photos={page.photos} />
       </div>
     );
   }
@@ -50,15 +40,16 @@ class App extends Component {
 export default connect(
   state => ({
     user: state.user,
-    page: state.page
+    page: state.page,
+    filter: state.filter
   }),
   dispatch => ({
-    setYear: (year) => {
-      dispatch({ type: 'SET_YEAR', payload: year })
-    },
-    getPhotos: (year, test) => {
+    getPhotos: (filter) => {
       const request = document.querySelector('#test').value;
-      dispatch(getPhotos(year, request || test))
+      dispatch(getPhotos(filter, request))
+    },
+    setFilter: (filter) => {
+      dispatch({type: 'SET_FILTER', filter})
     }
   })
 )(App);

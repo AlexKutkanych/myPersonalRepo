@@ -1,21 +1,19 @@
-import { GET_PHOTOS_REQUEST, PIXABAY_API } from '../constants/Page';
+import { GET_ALL_PHOTOS_REQUEST, GET_PHOTOS_FAILED, PIXABAY_API } from '../constants/Page';
 import axios from 'axios';
 
-export const getPhotos = (year, request) => dispatch => {
-  return axios.get(`${PIXABAY_API}&q=${request}`)
+export const getPhotos = (imageType = 'all', request) => dispatch => {
+  return axios.get(`${PIXABAY_API}&image_type=${imageType}&q=${request}`)
     .then(res => {
       dispatch({
-        type: GET_PHOTOS_REQUEST,
-        payload: year,
-        photos: res.data.hits
+        type: GET_ALL_PHOTOS_REQUEST,
+        photos: res.data.hits,
+        imageType,
       })
     })
-
-  // setTimeout(() => {
-  //   dispatch({
-  //     type: GET_PHOTOS_SUCCESS,
-  //     payload: year,
-  //     photos: []
-  //   })
-  // }, 1000)
+    .catch(err => {
+      dispatch({
+        type: GET_PHOTOS_FAILED,
+        photos: [],
+      })
+    })
 }

@@ -1,28 +1,28 @@
-var mock = [
+var mockCars = [
   {
-    id: 1,
+    id: 3,
     carName: 'BMW'
   },
   {
-    id: 2,
-    carName: 'Audi'
-  },
-  {
-    id: 3,
+    id: 4,
     carName: 'VW'
   },
   {
-    id: 4,
+    id: 5,
     carName: 'Toyota'
   },
   {
-    id: 5,
+    id: 6,
     carName: 'Merc'
+  },
+  {
+    id: 7,
+    carName: 'ZAZ'
   }
 ]
 
 export const getCars = () => dispatch => {
     setTimeout(() => {
-      dispatch({ type: 'FETCH_CARS', payload: mock })
+      dispatch({ type: 'FETCH_CARS', payload: mockCars })
     }, 1000)
   }
