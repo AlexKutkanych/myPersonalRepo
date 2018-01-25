@@ -4,7 +4,6 @@ import '../../App.css';
 class SortByImageType extends Component {
 
   searchContent = () => {
-    const request = document.querySelector('#test').value;
     const currentFilter = document.querySelector(".button_active").getAttribute('datacontenttype');
     let search;
     if(currentFilter === 'images'){

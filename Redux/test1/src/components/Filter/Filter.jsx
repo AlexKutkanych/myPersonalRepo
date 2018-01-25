@@ -1,10 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../../App.css';
 
 class Filter extends Component {
 
   onFilterBtnClick = (e) => {
     const label = e.target.getAttribute('datalabel');
+    this.props.selectContent(e.target.getAttribute('datacontenttype'));
     this.props.setFilter(label);
     this.props.getContent(label, '', 5);
   }

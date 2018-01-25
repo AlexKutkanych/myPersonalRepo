@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import content from './content';
+import images from './images';
+import videos from './videos';
 import user from './user';
 import filter from './filter';
 
 export default combineReducers({
-  content,
+  images,
+  videos,
   user,
   filter
 })
