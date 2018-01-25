@@ -1,5 +1,6 @@
 .App {
-  text-align: center; }
+  text-align: center;
+}
 
 .App-header {
   background-color: black;
@@ -8,14 +9,16 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+}
 
 .App-title {
   float: left;
   vertical-align: middle;
   margin: 0 0 0 60px;
-  position: relative; }
-  .App-title::before {
+  position: relative;
+
+  &::before {
     content: '';
     display: inline-block;
     width: 40px;
@@ -23,19 +26,25 @@
     position: absolute;
     left: -50px;
     top: -2px;
-    background-image: url("./components/gallery.svg"); }
+    background-image: url('./components/gallery.svg');
+  }
+}
 
 .App-intro {
-  font-size: large; }
+  font-size: large;
+}
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-.type-filter__block {
-  margin-top: 25px; }
+.type-filter {
+
+  &__block {
+    margin-top: 25px;
+  }
+}
 
 .button {
   display: block;
@@ -49,34 +58,44 @@
   line-height: 40px;
   margin-right: 20px;
   color: #fff;
-  font-size: 23px; }
-  .button_active {
+  font-size: 23px;
+
+
+  &_active {
     background-color: #fff;
     border: 5px solid dodgerblue;
-    color: dodgerblue; }
-  .button:hover {
+    color: dodgerblue;
+  }
+
+  &:hover {
     cursor: pointer;
     background-color: #fff;
     border: 5px solid dodgerblue;
-    color: dodgerblue; }
+    color: dodgerblue;
+  }
+}
 
 .user-wrapper {
-  float: right; }
+  float: right;
+}
 
 .filter-wrapper {
   height: 100px;
-  padding: 0 20px; }
+  padding: 0 20px;
+}
 
 .search-block {
   width: 350px;
   float: right;
-  padding: 20px 0; }
+  padding: 20px 0;
+}
 
 .search-input {
   width: 64%;
   border: none;
   border-bottom: 5px solid dodgerblue;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+}
 
 .search-button {
   width: 30%;
@@ -87,13 +106,17 @@
   color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
-  margin-left: 20px; }
-  .search-button:hover {
-    cursor: pointer; }
+  margin-left: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
 
 .footer {
   width: 100%;
   height: 80px;
   background-color: black;
   color: #fff;
-  padding: 20px 0; }
+  padding: 20px 0;
+}
