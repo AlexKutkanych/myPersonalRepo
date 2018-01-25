@@ -6,7 +6,7 @@ class Filter extends Component {
   onFilterBtnClick = (e) => {
     const label = e.target.getAttribute('datalabel');
     this.props.setFilter(label);
-    this.props.getPhotos(label);
+    this.props.getContent(label);
   }
 
   render(){

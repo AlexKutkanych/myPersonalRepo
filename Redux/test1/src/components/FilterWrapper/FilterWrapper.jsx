@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
-import SortByImageType from '../SortByImageType/SortByImageType';
+import SortByContentType from '../SortByContentType/SortByContentType';
 import SearchBlock from '../SearchBlock/SearchBlock';
 import '../../App.css';
 
 class FilterWrapper extends Component {
 
   render(){
-    const { getPhotos, setFilter, filter } = this.props;
+    const { getPhotos, getVideos, setFilter, filter, label } = this.props;
     return (
       <div className="filter-wrapper">
-        <SortByImageType
-          getPhotos={getPhotos}
+        <SortByContentType
+          title='Sort images'
+          getContent={getPhotos}
           setFilter={setFilter}
           filter={filter}
+          label={label[0].photos}
            />
+         <SortByContentType
+           title='Sort videos'
+           getContent={getVideos}
+           setFilter={setFilter}
+           filter={filter}
+           label={label[1].videos}
+          />
          <SearchBlock
            getPhotos={getPhotos}
            filter={filter}

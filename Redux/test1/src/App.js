@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import PhotoGrid from './components/PhotoGrid/PhotoGrid';
+import ContentGrid from './components/ContentGrid/ContentGrid';
 import Footer from './components/Footer/Footer';
 import UserWrapper from './components/UserWrapper/UserWrapper';
 import FilterWrapper from './components/FilterWrapper/FilterWrapper';
-import { getPhotos } from './actions/PageActions';
+import { getPhotos } from './actions/ImagesActions';
+import { getVideos } from './actions/VideosActions';
 import './App.css';
 import img from './components/gallery.svg';
 
@@ -13,7 +14,11 @@ class App extends Component {
     constructor(props){
       super(props);
       this.state = {
-        test: 2015
+        test: 2015,
+        label: [
+          {photos: ['all', 'vector', 'photos']},
+          {videos: ['film', 'animation']}
+        ]
       }
     }
 
@@ -31,9 +36,11 @@ class App extends Component {
         </header>
         <FilterWrapper
           getPhotos={getPhotos}
+          getVideos={getVideos}
           setFilter={setFilter}
-          filter={filter} />
-        <PhotoGrid photos={page.photos} />
+          filter={filter}
+          label={this.state.label} />
+        <ContentGrid content={page} />
         <Footer />
       </div>
     );
@@ -43,13 +50,17 @@ class App extends Component {
 export default connect(
   state => ({
     user: state.user,
-    page: state.page,
+    page: state.content,
     filter: state.filter
   }),
   dispatch => ({
     getPhotos: (filter) => {
       const request = document.querySelector('#test').value;
       dispatch(getPhotos(filter, request))
+    },
+    getVideos: (filter) => {
+      const request = document.querySelector('#test').value;
+      dispatch(getVideos(filter, request))
     },
     setFilter: (filter) => {
       dispatch({type: 'SET_FILTER', filter})
