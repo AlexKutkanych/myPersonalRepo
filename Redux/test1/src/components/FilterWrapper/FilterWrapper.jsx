@@ -4,17 +4,17 @@ import SearchBlock from '../SearchBlock/SearchBlock';
 import '../../App.css';
 
 class FilterWrapper extends Component {
-
   render(){
-    const { getPhotos, getVideos, setFilter, filter, label } = this.props;
+    const { getImages, getVideos, setFilter, filter, label } = this.props;
+
     return (
       <div className="filter-wrapper">
         <SortByContentType
           title='Sort images'
-          getContent={getPhotos}
+          getContent={getImages}
           setFilter={setFilter}
           filter={filter}
-          label={label[0].photos}
+          label={label[0].images}
            />
          <SortByContentType
            title='Sort videos'
@@ -24,7 +24,8 @@ class FilterWrapper extends Component {
            label={label[1].videos}
           />
          <SearchBlock
-           getPhotos={getPhotos}
+           getVideos={getVideos}
+           getImages={getImages}
            filter={filter}
            />
       </div>

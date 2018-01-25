@@ -5,7 +5,7 @@ import ContentGrid from './components/ContentGrid/ContentGrid';
 import Footer from './components/Footer/Footer';
 import UserWrapper from './components/UserWrapper/UserWrapper';
 import FilterWrapper from './components/FilterWrapper/FilterWrapper';
-import { getPhotos } from './actions/ImagesActions';
+import { getImages } from './actions/ImagesActions';
 import { getVideos } from './actions/VideosActions';
 import './App.css';
 import img from './components/gallery.svg';
@@ -16,18 +16,18 @@ class App extends Component {
       this.state = {
         test: 2015,
         label: [
-          {photos: ['all', 'vector', 'photos']},
+          {images: ['all', 'vector', 'photos']},
           {videos: ['film', 'animation']}
         ]
       }
     }
 
     componentDidMount(){
-      this.props.getPhotos('all');
+      this.props.getImages('all');
     }
 
   render() {
-    const { page, filter, getPhotos, setFilter } = this.props;
+    const { page, filter, getImages, getVideos, setFilter } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -35,7 +35,7 @@ class App extends Component {
           <UserWrapper />
         </header>
         <FilterWrapper
-          getPhotos={getPhotos}
+          getImages={getImages}
           getVideos={getVideos}
           setFilter={setFilter}
           filter={filter}
@@ -54,9 +54,9 @@ export default connect(
     filter: state.filter
   }),
   dispatch => ({
-    getPhotos: (filter) => {
+    getImages: (filter) => {
       const request = document.querySelector('#test').value;
-      dispatch(getPhotos(filter, request))
+      dispatch(getImages(filter, request))
     },
     getVideos: (filter) => {
       const request = document.querySelector('#test').value;
