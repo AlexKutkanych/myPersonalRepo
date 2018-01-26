@@ -5,7 +5,7 @@ import {
   PIXABAY_API_IMAGES } from '../constants/Page';
 import axios from 'axios';
 
-export const getImages = (imageType = 'all', request, perPage = 200) => dispatch => {
+export const getImages = (imageType = 'all', request, perPage = 40) => dispatch => {
   dispatch({
     type: GET_PHOTOS_REQUEST,
     data: []

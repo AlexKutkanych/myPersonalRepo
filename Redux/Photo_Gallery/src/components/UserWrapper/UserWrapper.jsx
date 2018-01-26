@@ -8,7 +8,7 @@ class UserWrapper extends Component {
 
     return (
       <div className="user-wrapper">
-        <UserBtn label='login'/>
+        <UserBtn label='log in'/>
         <UserBtn label='sign up'/>
       </div>
     )

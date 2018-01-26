@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import ContentBlock from '../ContentBlock/ContentBlock';
 import User from '../User/User';
 import Login from '../Login/Login';
+import SignUp from '../SignUp/SignUp';
 import '../../App.css';
 
 const Main = () => (
@@ -10,7 +11,8 @@ const Main = () => (
       <Switch>
         <Route exact path='/' component={ContentBlock}/>
         <Route path='/user' component={User}/>
-        <Route path='/login' component={Login}/>
+        <Route path='/log in' component={Login}/>
+        <Route path='/sign up' component={SignUp}/>
       </Switch>
   </main>
 );
