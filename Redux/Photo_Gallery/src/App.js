@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import FilterWrapper from './components/FilterWrapper/FilterWrapper';
 import Loading from './components/Loading/Loading';
+import Main from './components/Main/Main';
 
 import { getImages } from './actions/ImagesActions';
 import { getVideos } from './actions/VideosActions';
@@ -25,7 +26,7 @@ class App extends Component {
     }
 
     componentDidMount(){
-      this.props.getImages('all');
+      // this.props.getImages('all');
     }
 
     selectContent = (currentFilter) => {
@@ -43,47 +44,48 @@ class App extends Component {
     }
 
   render() {
-    const { images, videos, isLoading, filter, getImages, getVideos, setFilter } = this.props;
-
+    // const { images, videos, isLoading, filter, getImages, getVideos, setFilter } = this.props;
+    // <FilterWrapper
+    //   getImages={getImages}
+    //   getVideos={getVideos}
+    //   setFilter={setFilter}
+    //   filter={filter}
+    //   label={this.state.label}
+    //   selectContent={this.selectContent} />
+    // {isLoading ? <Loading /> :
+    //   <ContentGrid images={images}
+    //                videos={videos}
+    //                contentType={this.state.content}/>}
     return (
       <div className="App">
         <Header />
-        <FilterWrapper
-          getImages={getImages}
-          getVideos={getVideos}
-          setFilter={setFilter}
-          filter={filter}
-          label={this.state.label}
-          selectContent={this.selectContent} />
-        {isLoading ? <Loading /> :
-          <ContentGrid images={images}
-                       videos={videos}
-                       contentType={this.state.content}/>}
+        <Main />
         <Footer />
       </div>
     );
   }
 }
 
-export default connect(
-  state => ({
-    user: state.user,
-    images: state.images.data,
-    videos: state.videos.data,
-    filter: state.filter,
-    isLoading: state.images.isLoading
-  }),
-  dispatch => ({
-    getImages: (filter, perPage) => {
-      const request = document.querySelector('#test').value;
-      dispatch(getImages(filter, request, perPage))
-    },
-    getVideos: (filter, perPage) => {
-      const request = document.querySelector('#test').value;
-      dispatch(getVideos(filter, request, perPage))
-    },
-    setFilter: (filter) => {
-      dispatch({type: 'SET_FILTER', filter})
-    }
-  })
-)(App);
+// export default connect(
+//   state => ({
+//     user: state.user,
+//     images: state.images.data,
+//     videos: state.videos.data,
+//     filter: state.filter,
+//     isLoading: state.images.isLoading
+//   }),
+//   dispatch => ({
+//     getImages: (filter, perPage) => {
+//       const request = document.querySelector('#test').value;
+//       dispatch(getImages(filter, request, perPage))
+//     },
+//     getVideos: (filter, perPage) => {
+//       const request = document.querySelector('#test').value;
+//       dispatch(getVideos(filter, request, perPage))
+//     },
+//     setFilter: (filter) => {
+//       dispatch({type: 'SET_FILTER', filter})
+//     }
+//   })
+// )(App);
+export default App;
