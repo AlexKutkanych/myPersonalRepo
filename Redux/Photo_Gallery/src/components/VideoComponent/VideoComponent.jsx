@@ -7,7 +7,7 @@ class VideoComponent extends Component {
 
     return (
         <Fragment>
-          <video className="video-block" width="768" height="432" controls preload="none">
+          <video className="video-block" width="768" height="432" controls preload="metadata">
             <source src={source} type="video/mp4" />
           </video>
         </Fragment>

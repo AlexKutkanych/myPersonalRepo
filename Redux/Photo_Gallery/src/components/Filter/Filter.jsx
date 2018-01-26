@@ -7,7 +7,7 @@ class Filter extends Component {
     const label = e.target.getAttribute('datalabel');
     this.props.selectContent(e.target.getAttribute('datacontenttype'));
     this.props.setFilter(label);
-    this.props.getContent(label, '');
+    this.props.getContent(label);
   }
 
   render(){

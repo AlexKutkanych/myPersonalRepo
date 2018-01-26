@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import ContentGrid from './components/ContentGrid/ContentGrid';
+import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import UserWrapper from './components/UserWrapper/UserWrapper';
 import FilterWrapper from './components/FilterWrapper/FilterWrapper';
 import Loading from './components/Loading/Loading';
 
@@ -44,12 +44,10 @@ class App extends Component {
 
   render() {
     const { images, videos, isLoading, filter, getImages, getVideos, setFilter } = this.props;
+
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Photo album</h1>
-          <UserWrapper />
-        </header>
+        <Header />
         <FilterWrapper
           getImages={getImages}
           getVideos={getVideos}
@@ -76,13 +74,13 @@ export default connect(
     isLoading: state.images.isLoading
   }),
   dispatch => ({
-    getImages: (filter) => {
+    getImages: (filter, perPage) => {
       const request = document.querySelector('#test').value;
-      dispatch(getImages(filter, request))
+      dispatch(getImages(filter, request, perPage))
     },
-    getVideos: (filter) => {
+    getVideos: (filter, perPage) => {
       const request = document.querySelector('#test').value;
-      dispatch(getVideos(filter, request))
+      dispatch(getVideos(filter, request, perPage))
     },
     setFilter: (filter) => {
       dispatch({type: 'SET_FILTER', filter})
