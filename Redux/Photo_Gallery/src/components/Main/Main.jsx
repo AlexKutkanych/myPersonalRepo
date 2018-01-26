@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
-import App from '../../App';
+import ContentBlock from '../ContentBlock/ContentBlock';
 import User from '../User/User';
 import Login from '../Login/Login';
 import '../../App.css';
@@ -8,7 +8,7 @@ import '../../App.css';
 const Main = () => (
   <main>
       <Switch>
-        <Route exact path='/' component={Login}/>
+        <Route exact path='/' component={ContentBlock}/>
         <Route path='/user' component={User}/>
         <Route path='/login' component={Login}/>
       </Switch>
