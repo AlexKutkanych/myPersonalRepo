@@ -25,7 +25,7 @@ class App extends Component {
     }
 
     componentDidMount(){
-      this.props.getImages('all', 100);
+      this.props.getImages('all');
     }
 
     selectContent = (currentFilter) => {
@@ -76,9 +76,9 @@ export default connect(
     isLoading: state.images.isLoading
   }),
   dispatch => ({
-    getImages: (filter, perPage) => {
+    getImages: (filter) => {
       const request = document.querySelector('#test').value;
-      dispatch(getImages(filter, request, perPage))
+      dispatch(getImages(filter, request))
     },
     getVideos: (filter) => {
       const request = document.querySelector('#test').value;
