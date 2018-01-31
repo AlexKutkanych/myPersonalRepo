@@ -8,7 +8,7 @@ class Header extends Component {
 
     return (
       <header className="App-header">
-        <h1 className="App-title"><Link to='/'>Photo album</Link></h1>
+        <h1 className="App-title"><Link to='/content'>Photo album</Link></h1>
         <UserWrapper />
       </header>
     )

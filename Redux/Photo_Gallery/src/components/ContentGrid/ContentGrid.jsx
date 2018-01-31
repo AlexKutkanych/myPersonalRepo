@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import VideoComponent from '../VideoComponent/VideoComponent';
 import ImageComponent from '../ImageComponent/ImageComponent';
@@ -18,11 +19,11 @@ class ContentGrid extends Component {
             >
             {contentType === 'images' ?
              this.props.images.map(({ previewURL, id, tags, likes, views }) => {
-               return <ImageComponent key={id}
+               return <Link to={`/content/${id}`} key={id}><ImageComponent key={id}
                                previewURL={previewURL}
                                tags={tags}
                                likes={likes}
-                               views={views} />
+                               views={views} /></Link>
              }) :
              this.props.videos.map(({ videos, id }) => <VideoComponent key={id} source={videos.large.url} />)}
             </Masonry>
