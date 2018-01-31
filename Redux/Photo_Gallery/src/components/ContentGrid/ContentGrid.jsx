@@ -3,7 +3,7 @@ import Masonry from 'react-masonry-component';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import VideoComponent from '../VideoComponent/VideoComponent';
-import ImageComponent from '../ImageComponent/ImageComponent';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import '../../App.css';
 
 class ContentGrid extends Component {
@@ -19,7 +19,7 @@ class ContentGrid extends Component {
             >
             {contentType === 'images' ?
              this.props.images.map(({ previewURL, id, tags, likes, views }) => {
-               return <Link to={`/content/${id}`} key={id}><ImageComponent key={id}
+               return <Link to={`/content/${id}`} key={id}><ImageContainer key={id}
                                previewURL={previewURL}
                                tags={tags}
                                likes={likes}
