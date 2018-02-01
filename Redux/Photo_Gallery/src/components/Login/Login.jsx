@@ -3,6 +3,22 @@ import InputBlock from '../InputBlock/InputBlock';
 import '../../App.css';
 
 class Login extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        email: '',
+        password: ''
+    }
+  }
+
+  handleInput = (e) => {
+    const target = e.target;
+    this.setState({
+      ...this.state,
+      [target.name]: target.value
+    });
+  }
+
   render(){
 
     return (
@@ -10,8 +26,8 @@ class Login extends Component {
           <section className="login-page__login">
             <h2>Login</h2>
             <form>
-              <InputBlock id="email-input" label="Email" placeholder="Enter your email"/>
-              <InputBlock id="password-input" label="Password" placeholder="Enter your password"/>
+              <InputBlock onChange={this.handleInput} id="email-input" label="Email" type="email" name="email" value={this.state.email} placeholder="Enter your email" />
+              <InputBlock onChange={this.handleInput} id="password-input" label="Password" type="password" name="password" value={this.state.password} placeholder="Enter your password"  />
               <button>Login</button>
             </form>
           </section>
