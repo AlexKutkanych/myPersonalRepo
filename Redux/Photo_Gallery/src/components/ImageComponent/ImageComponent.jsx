@@ -8,14 +8,22 @@ class ImageComponent extends Component {
 
 
   render(){
-        const { webformatURL, tags, comments, likes, views } = this.props.image;
-        console.log(this.props.image);
+    const { webformatURL, tags, comments, likes, views, webformatWidth, webformatHeight, userImageURL, user_id, user } = this.props.image;
     return (
-        <div className="image-block">
-          <img src={webformatURL} alt={tags} />
-          <span>{comments} comments</span>
-          <Link to='/log in'><p>Log in to leave comments</p></Link>
-          {String(tags).split(', ').map((item, i) => <p key={i}>{item}</p>)}
+        <div className="image-block clearfix">
+          <img src={webformatURL} className="image-block__image" width={webformatWidth} height={webformatHeight} alt={tags} />
+          <div className="image-block__data">
+            <div className="user-block">
+              <img className="user-block__image" src={userImageURL} alt={user_id} />
+              <p className="user-block__data">{user}</p>
+            </div>
+            <a href={webformatURL} target="_blank" className="button download-button" download>Download Free</a>
+          </div>
+          <span className="image-block__comment-count">{comments}&nbsp;comments</span>
+          <Link to='/log in'><span className="image-block__login-btn">Log in to leave comments</span></Link>
+          <div className="image-block__tags-block">
+              {String(tags).split(', ').map((item, i) => <a className="tag-item" href="#" key={i}>{item}</a>)}
+          </div>
           <span className="image-counter image-counter_likes">{likes}</span>
           <span className="image-counter image-counter_views">{views}</span>
         </div>

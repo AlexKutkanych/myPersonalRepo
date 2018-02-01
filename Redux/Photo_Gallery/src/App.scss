@@ -1,3 +1,5 @@
+@import "constants/styles.scss";
+
 .App {
   text-align: center;
 }
@@ -139,7 +141,7 @@
   }
 }
 
-.image-block {
+.image-container {
   position: relative;
   &:hover {
     cursor: pointer;
@@ -196,6 +198,116 @@
 
 .video-block {
   margin: 50px;
+}
+
+.image-block {
+  padding: 20px;
+
+  &__image {
+    max-width: 66%;
+    display: block;
+    float: left;
+    padding: 10px;
+  }
+
+  &__data {
+    float: left;
+    width: 30%;
+    margin-top: 10px;
+  }
+
+  &__comment-count {
+    float: left;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 5px 10px;
+    clear: both;
+    color: #fff;
+    background-color: $main-hover-color;
+    border: 1px solid $main-hover-color;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      box-sizing: border-box;
+      background-color: #fff;
+      color: $main-hover-color;
+      border: 1px solid $main-hover-color;
+    }
+  }
+
+  &__login-btn {
+    float: left;
+    padding: 16px 10px;
+    color: $main-hover-color;
+  }
+
+  &__tags-block {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    clear: both;
+    margin-left: 10px;
+  }
+}
+
+.user-block {
+  width: 100%;
+
+  &__image {
+    height: 48px;
+    width: 48px;
+    display: block;
+    float: left;
+    border-radius: 50%;
+
+    &:hover {
+      opacity: .65;
+    }
+  }
+
+  &__data {
+    float: left;
+    margin-left: 10px;
+  }
+}
+
+.download-button {
+  width: 100%;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.tag-item {
+  border: 1px solid grey;
+  color: grey;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+
+  &:hover {
+    color: $main-hover-color;
+    border: 1px solid $main-hover-color;
+  }
+}
+
+.login-page {
+  height: 80vh;
+
+  &__login {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: darkgray;
+    border: 2px solid $main-hover-color;
+  }
+}
+
+.input-block {
+  display: block;
+  width: 100%;
 }
 
 .footer {
