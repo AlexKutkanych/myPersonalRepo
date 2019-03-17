@@ -1,0 +1,74 @@
+@import '../../consts.scss';
+
+.cube {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: cube-rotation 8s linear infinite;
+
+    &-wrapper {    
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        perspective: 800px;
+    }
+
+    &__facet {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: skyblue;
+        opacity: 0.5;
+        text-align: center;
+        line-height: 300px;
+        font-size: 3em;
+
+        &_facet1 {
+            transform:translateZ(200px);
+        }
+
+        &_facet2 {
+            transform-origin: left;
+            transform: translateX(300px) translateZ(200px)  rotateY(90deg);
+        }
+
+        &_facet3 {
+            transform-origin: left;
+            transform: translateZ(200px) rotateY(90deg) scale(-1, 1) translate(-100%);
+        }
+
+        &_facet4 {
+            transform-origin: top;
+            transform: translateZ(-100px) rotateX(90deg);
+        }
+
+        &_facet5 {
+            transform-origin: bottom;
+            transform: translateZ(200px) rotateX(90deg);
+        }
+
+        &_facet6 {
+            transform-origin: center;
+            transform: translateZ(-100px) scale(-1, 1);
+        }
+    }
+}
+
+@keyframes cube-rotation {
+    0% {
+        transform:translate(-50%,-50%) translateX(0px) rotateY(0deg);
+    }
+    50% {
+        transform:translate(-50%,-50%) translateX(0px) rotateY(180deg);
+    }
+    100% {
+        transform:translate(-50%,-50%) translateX(0px) rotateY(360deg);
+    }
+}

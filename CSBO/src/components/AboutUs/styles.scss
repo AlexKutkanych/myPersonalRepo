@@ -1,0 +1,17 @@
+@import '../../consts.scss';
+
+.aboutus-section {
+    
+    &__wrapper {
+        display: flex;
+    }
+
+    &__cube {
+        position: relative;
+        min-height: 500px;
+    }
+
+    &__description {
+
+    }
+}

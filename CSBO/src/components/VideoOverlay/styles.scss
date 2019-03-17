@@ -1,0 +1,13 @@
+.overlay__slogan {
+    position: absolute;
+    top: 200px;
+    left: 47.3%;
+    width: 700px;
+    z-index: 1;
+    color: white;
+    padding: 5px;
+    &_heading {
+      font-size: 80px;
+      color: white;
+    }
+}

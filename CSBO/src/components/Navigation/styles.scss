@@ -1,0 +1,13 @@
+@import '../../consts.scss';
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navigation {
+    display: flex;
+
+    &-section {
+        background-color: $main-color;
+    }
+}

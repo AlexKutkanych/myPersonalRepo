@@ -1,0 +1,31 @@
+@import 'reset-css';
+@import './consts.scss';
+
+body {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.inner-wrapper {
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.section-header {
+  font-size: 1.5rem;
+  padding: 20px 0;
+  color: $color-white;
+}
+
+.left-column {
+  flex: 1 0 0;
+}
+
+.right-column {
+  flex: 1 0 0;
+}
+
