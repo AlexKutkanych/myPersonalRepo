@@ -3,7 +3,7 @@ import './styles.scss';
 
 const ContactItem = ({ contact, type }) => {
     return (
-        <li className={`__${type}`}>{contact}</li>
+        <li className={`contacts__item contacts__item_${type}`}>{contact}</li>
     );
 };
 

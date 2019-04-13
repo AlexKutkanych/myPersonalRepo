@@ -1,0 +1,27 @@
+.contacts {
+    &__item {
+        padding: 5px 0;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        &_mobile {
+            &::before {
+                background-image: url('../../images/phone-icon.svg');
+            }
+        }
+
+        &_email {
+            &::before {
+                background-image: url('../../images/email-icon.svg');
+            }
+        }
+    }
+}

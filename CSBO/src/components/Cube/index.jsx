@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ContactItem from '../ContactItem';
 import './styles.scss';
 
 class Cube extends Component {

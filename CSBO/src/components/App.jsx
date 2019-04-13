@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react';
 import Navigation from './Navigation';
 import VideoBlock from './VideoBlock';
 import AboutUs from './AboutUs';
+import OurProjects from './OurProjects';
 import Footer from './Footer';
+import ToTopButton from './ToTopButton';
 
 class App extends Component {
   render() {
@@ -11,7 +13,9 @@ class App extends Component {
         <Navigation />
         <VideoBlock />
         <AboutUs />
-        <Footer />  
+        <OurProjects />
+        <Footer />
+        <ToTopButton /> 
       </Fragment>
     );
   }

@@ -1,0 +1,24 @@
+@import '../../consts.scss';
+
+.our-projects {
+    height: 600px;
+    
+    .slick-list {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .slick-prev {
+        left: 0;
+    }
+
+    .slick-next {
+        right: 10px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 30px;
+        color: $main-color;
+    }
+}

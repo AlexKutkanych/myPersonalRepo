@@ -8,7 +8,7 @@ class Contacts extends Component {
         return (
             <Fragment>
                 <h1 className="section-header">Контакти:</h1>
-                <ul>
+                <ul className="contacts">
                     {contactsList.map((contact, i) => <ContactItem key={i} contact={contact.value} type={contact.type} />)}
                 </ul>
             </Fragment>

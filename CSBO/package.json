@@ -7,7 +7,9 @@
     "react-dom": "^16.8.2",
     "react-intl": "^2.8.0",
     "react-scripts": "2.1.5",
-    "reset-css": "^4.0.1"
+    "react-slick": "^0.23.2",
+    "reset-css": "^4.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
