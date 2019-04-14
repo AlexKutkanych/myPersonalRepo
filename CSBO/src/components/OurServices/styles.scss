@@ -1,0 +1,17 @@
+.our-services {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background: url('../../images/services-background.jpg');
+
+    &__list {
+        padding: 0 40px;
+        column-count: 2;
+    }
+
+    &__service {
+        list-style: disc inside;
+        padding: 0 0 10px 5px;
+    }
+}

@@ -1,14 +1,17 @@
 export default [
     {
         value: '+380503787201',
-        type: 'mobile'
+        type: 'mobile',
+        isMain: true
     },
     {
         value: '+380503787201',
-        type: 'mobile'
+        type: 'mobile',
+        isMain: false
     },
     {
         value: 'email@sdf.csdf',
-        type: 'email'
+        type: 'email',
+        isMain: true
     }
 ];

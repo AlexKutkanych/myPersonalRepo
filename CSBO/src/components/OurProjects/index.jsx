@@ -9,10 +9,12 @@ class OurProjects extends React.Component {
     render() {
         return (
         <div className="our-projects">
-            <h2> Our Projects </h2>
-        <Slider {...settings}>
-            {projectsList.map(({ id, name, description, image }) => <ProjectItem key={id} name={name} description={description} image={image} />)}
-        </Slider>
+            <div className="section-header__wrapper">
+                <h1 className="section-header">Our Projects</h1>
+            </div>
+            <Slider {...settings}>
+                {projectsList.map(({ id, name, description, image }) => <ProjectItem key={id} name={name} description={description} image={image} />)}
+            </Slider>
         </div>
         );
     }

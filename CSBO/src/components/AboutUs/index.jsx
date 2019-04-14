@@ -12,11 +12,12 @@ class AboutUs extends Component {
                     </section>
                     <section className="aboutus-section__description right-column">
                         <h1 className="section-header">Про нас</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequuntur labore atque. Nesciunt vel quibusdam possimus quisquam cum quia harum officiis, qui quam a, incidunt placeat assumenda facere eum atque?
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequuntur labore atque. Nesciunt vel quibusdam possimus quisquam cum quia harum officiis, qui quam a, incidunt placeat assumenda facere eum atque?
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequuntur labore atque. Nesciunt vel quibusdam possimus quisquam cum quia harum officiis, qui quam a, incidunt placeat assumenda facere eum atque?
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequuntur labore atque. Nesciunt vel quibusdam possimus quisquam cum quia harum officiis, qui quam a, incidunt placeat assumenda facere eum atque?
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequuntur labore atque. Nesciunt vel quibusdam possimus quisquam cum quia harum officiis, qui quam a, incidunt placeat assumenda facere eum atque?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequuntur labore atque. Nesciunt vel quibusdam possimus quisquam cum quia harum officiis, qui quam a, incidunt placeat assumenda facere eum atque?
+                        </p>
                     </section>
                 </div>
             </div>
